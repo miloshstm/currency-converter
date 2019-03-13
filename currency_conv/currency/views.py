@@ -4,12 +4,9 @@ from django.shortcuts import render
 def index(request):
 	url = 'https://openexchangerates.org/api/latest.json?app_id=08282bcf2e894509a5a4faa5a46b4838'
 
-	# value = '1 US'
-
 	r = requests.get(url.format()).json()
 
 	conversion = {
-		# 'value': value,
 		'mkd': r['rates']['MKD'],
 		'rsd': r['rates']['RSD'],
 	}
